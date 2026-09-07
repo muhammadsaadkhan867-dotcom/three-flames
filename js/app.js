@@ -33,7 +33,7 @@ const tabs = $('#menuTabs');
 tabs.innerHTML = `<button class="active" data-group="all">All menu</button>` + groups.map(g=>`<button data-group="${g[0]}">${g[1]}</button>`).join('');
 function renderGroups(active='all'){
   const visible = active==='all'?groups:groups.filter(g=>g[0]===active);
-  $('#fullMenuGrid').innerHTML = visible.map(g=>`<article class="menu-group ${g[0]==='platters'?'menu-group--platter':''}"><div class="menu-group-head"><span>${g[2]}</span><span>✣</span></div><h3>${g[1]}</h3><div class="menu-group-lines">${g[3].map(i=>`<div class="menu-line"><div><b>${i[0]}</b>${i[2]?`<p>${i[2]}</p>`:''}</div><strong>${i[1]}</strong></div>`).join('')}</div><a href="tel:+923344226655" class="menu-group-order">Order this category ↗</a></article>`).join('');
+  $('#fullMenuGrid').innerHTML = visible.map(g=>`<article class="menu-group ${g[0]==='platters'?'menu-group--platter':''}"><div class="menu-group-head"><span>${g[2]}</span><span>✣</span></div><h3>${g[1]}</h3><div class="menu-group-lines">${g[3].map(i=>`<div class="menu-line"><div><b>${i[0]}</b>${i[2]?`<p>${i[2]}</p>`:''}</div><strong>${i[1]}</strong></div>`).join('')}</div><a href="tel:03179693315" class="menu-group-order">Order this category ↗</a></article>`).join('');
 }
 tabs.addEventListener('click',e=>{if(!e.target.dataset.group)return;tabs.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b===e.target));renderGroups(e.target.dataset.group)});
 renderFeatured();renderGroups();
